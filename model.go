@@ -66,9 +66,9 @@ func newModel(words []string) *model {
 	return md
 }
 
-const helpText = `+/-:speed  ;/,:+- n° of lines
+const helpText = `+/-:speed  ;/,: inc/dec n° of lines  W/w: inc/dec n° of words
 </>, (/), [/]:1, 50, 1000 backwards/forward
-0-9*:frame number  g:goto frame  c:clear goto frame number
+0-9*:frame number  g:goto frame  c:clear goto
 p:pause  q:quit`
 
 func (md *model) Update(msg gruid.Msg) gruid.Effect {
@@ -156,6 +156,18 @@ func (md *model) updateMsgKeyDown(msg gruid.MsgKeyDown) gruid.Effect {
 			md.wpm -= 50
 			md.interval = wpm2interval(md.wpm, md.words, md.wpf)
 			md.updateInfo()
+		}
+	case "W":
+		if OptWords < 4 {
+			OptWords++
+			md.updateFrameInfo()
+			md.frameInit()
+		}
+	case "w":
+		if OptWords > 1 {
+			OptWords--
+			md.updateFrameInfo()
+			md.frameInit()
 		}
 	case ";":
 		if md.nlines < 3 {
