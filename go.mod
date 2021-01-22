@@ -1,4 +1,4 @@
-module goscripts/gospeedr
+module github.com/anaseto/gospeedr
 
 go 1.15
 
