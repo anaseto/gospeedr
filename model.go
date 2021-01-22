@@ -56,12 +56,12 @@ func newModel(words []string) *model {
 		StyledText: ui.StyledText{}.WithMarkup('r', st.WithFg(ColorRed)),
 	}
 	md.info = &ui.Label{
-		Box:        &ui.Box{Title: ui.NewStyledText("Info: " + flag.Arg(0)), Style: st.WithFg(ColorMagenta)},
+		Box:        &ui.Box{Title: ui.Text("Info: " + flag.Arg(0)), Style: st.WithFg(ColorMagenta)},
 		StyledText: ui.StyledText{}.WithStyle(st.WithFg(ColorGreen)),
 	}
 	md.help = &ui.Label{
-		Box:        &ui.Box{Title: ui.NewStyledText("Help"), Style: st.WithFg(ColorCyan)},
-		StyledText: ui.NewStyledText(helpText).WithStyle(st.WithFg(ColorGreen)),
+		Box:        &ui.Box{Title: ui.Text("Help"), Style: st.WithFg(ColorCyan)},
+		StyledText: ui.Text(helpText).WithStyle(st.WithFg(ColorGreen)),
 	}
 	return md
 }
