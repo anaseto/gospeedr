@@ -52,16 +52,16 @@ func newModel(words []string) *model {
 		frames: []int{}}
 	st := gruid.Style{}
 	md.par = &ui.Label{
-		Box:        &ui.Box{Style: st.WithFg(ColorYellow)},
-		StyledText: ui.StyledText{}.WithMarkup('r', st.WithFg(ColorRed)),
+		Box:     &ui.Box{Style: st.WithFg(ColorYellow)},
+		Content: ui.StyledText{}.WithMarkup('r', st.WithFg(ColorRed)),
 	}
 	md.info = &ui.Label{
-		Box:        &ui.Box{Title: ui.Text("Info: " + flag.Arg(0)), Style: st.WithFg(ColorMagenta)},
-		StyledText: ui.StyledText{}.WithStyle(st.WithFg(ColorGreen)),
+		Box:     &ui.Box{Title: ui.Text("Info: " + flag.Arg(0)), Style: st.WithFg(ColorMagenta)},
+		Content: ui.StyledText{}.WithStyle(st.WithFg(ColorGreen)),
 	}
 	md.help = &ui.Label{
-		Box:        &ui.Box{Title: ui.Text("Help"), Style: st.WithFg(ColorCyan)},
-		StyledText: ui.Text(helpText).WithStyle(st.WithFg(ColorGreen)),
+		Box:     &ui.Box{Title: ui.Text("Help"), Style: st.WithFg(ColorCyan)},
+		Content: ui.Text(helpText).WithStyle(st.WithFg(ColorGreen)),
 	}
 	return md
 }
