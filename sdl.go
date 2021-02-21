@@ -6,7 +6,7 @@ import (
 	"log"
 
 	"github.com/anaseto/gruid"
-	"github.com/anaseto/gruid/drivers/sdl"
+	"github.com/anaseto/gruid-sdl"
 )
 
 var driver gruid.Driver

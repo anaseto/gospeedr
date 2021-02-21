@@ -4,7 +4,7 @@ package main
 
 import (
 	"github.com/anaseto/gruid"
-	"github.com/anaseto/gruid/drivers/tcell"
+	"github.com/anaseto/gruid-tcell"
 	tc "github.com/gdamore/tcell/v2"
 )
 
